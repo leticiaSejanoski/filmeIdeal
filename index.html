@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Filmes em Streaming</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="icones-topo">
+    <a href="https://youtube.com/@filmeideal-resenhas?si=n2Yta0HUAafJyEMM" target="_blank" class="icone-link">
+      <img src="logo.yt.png" alt="YouTube" />
+    </a>
+    <a href="https://www.instagram.com/filme_ideal?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="icone-link">
+      <img src="insta.png" alt="Discord" />
+    </a>
+  </div>
+  <div class="logo-centralizada">
+    <img src="logo.png.png" alt="Logo do trabalho" class="logo">
+
+  </header>
+  <footer class="site-footer">
+    Programmed by: Alessandra Lima, Leticia Sejanoski and Luana Sejanoski
+  </footer>
+  
+    </div>
+  </header>
+  <div class="discord-banner">
+    <div class="discord-header">
+    <img src="discord.png" class="discord-logo left" alt="Discord Logo Esquerda">
+    <h2> Join Our Discord Community!</h2>
+    </div>
+    <div class="comment-carousel">
+      <img src="1.jpg" class="active" alt="Comentário 1">
+      <img src="2.jpg" alt="Comentário 2">
+      <img src="3.jpg" alt="Comentário 3">
+      <img src="4.jpg" alt="Comentário 4">
+      <img src="5.jpg" alt="Comentário 5">
+      <img src="6.jpg" alt="Comentário 6">
+      <img src="7.jpg" alt="Comentário 7">
+      <img src="8.jpg" alt="Comentário 8">
+      <img src="9.jpg" alt="Comentário 9">
+      <img src="10.jpg" alt="Comentário 10">
+      <img src="11.jpg" alt="Comentário 11">
+    </div>
+    <a href="https://discord.gg/b7bB8aXwhk" class="join-button"> Join </a>
+  </div>
+  
+  <header>
+    <div class="barra-busca">
+      <div class="center-container">
+      <input type="text" id="buscarFilme" placeholder="Buscar filme por nome..." />
+      <button id="buscar">.</buton>
+    </div>
+
+    <div class="filtros-scroll" id="filtros-scroll">
+    
+      <button id="btn-desc">Mais populares</button>
+      <button id="btn-asc">Menos populares</button>
+      <button id="todos">Todos os filmes</button>
+
+      
+
+       <!-- Filtro por Gêneros -->
+       <div id="generos">
+  
+
+    </div>
+
+    <div class="filtros">
+      <label for="classificacao">Classificação:</label>
+      <select id="classificacao">
+        <option value="">Todas</option>
+        <option value="10">10+</option>
+        <option value="12">12+</option>
+        <option value="14">14+</option>
+        <option value="16">16+</option>
+        <option value="18">18+</option>
+      </select>
+
+
+    </div>
+    <label for="inicio">De:</label>
+    <input type="number" id="inicio" placeholder="Ano inicial" min="1700" max="2099" />
+    
+    <label for="fim">Até:</label>
+    <input type="number" id="fim" placeholder="Ano final" min="1700" max="2099" />
+    </div>
+
+    
+    <div id="modalFilme" class="modal">
+      <div class="modal-conteudo">
+        <span id="fecharModal" class="fechar">&times;</span>
+        <div id="detalhesFilme"></div>
+      </div>
+      <script>
+  const filtrosScroll = document.getElementById("filtros-scroll");
+  let autoScroll = true;
+  let scrollAmount = 0;
+
+  function scrollLoop() {
+    setInterval(() => {
+      if (!autoScroll) return;
+
+      filtrosScroll.scrollLeft += 1;
+      scrollAmount += 2;
+
+      if (filtrosScroll.scrollLeft + filtrosScroll.clientWidth >= filtrosScroll.scrollWidth - 1) {
+        filtrosScroll.scrollLeft = 0;
+        scrollAmount = 0;
+      }
+    }, 20);
+  }
+
+  filtrosScroll.addEventListener("mouseenter", () => autoScroll = false);
+  filtrosScroll.addEventListener("mouseleave", () => autoScroll = true);
+  filtrosScroll.addEventListener("touchstart", () => autoScroll = false);
+  filtrosScroll.addEventListener("touchend", () => autoScroll = true);
+
+  scrollLoop();
+</script>
+
+      
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const images = document.querySelectorAll('.comment-carousel img');
+          let index = 0;
+      
+          setInterval(() => {
+            images.forEach(img => img.classList.remove('active'));
+            index = (index + 1) % images.length;
+            images[index].classList.add('active');
+          }, 3000); // troca a cada 3 segundos
+        });
+      </script>
+      
+      
+    </div>
+  
+    </div>
+
+  </header>
+
+  <main>
+    <div id="filmesContainer"></div>
+  </main>
+  <script src="filme.js"></script> <!-- renomeie conforme o nome do seu JS -->
+</body>
+</html>

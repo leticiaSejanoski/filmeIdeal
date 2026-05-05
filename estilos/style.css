@@ -165,6 +165,10 @@ input:focus, select:focus {
   position: relative;
 }
 
+.fechar{
+  cursor: pointer;
+}
+
 .modal img {
   width: 100%;
   max-height: 300px; /* ↓ Altura da imagem reduzida */
@@ -241,7 +245,6 @@ input:focus, select:focus {
   animation: pulseBorder 2s infinite;
   transition: all 0.3s ease;
   box-shadow: 0 0 10px red; /* luz inicial */
-  cursor: pointer;
   
 }
 .center-container {
